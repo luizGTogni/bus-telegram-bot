@@ -1,3 +1,4 @@
+from os import remove
 from math import ceil
 from os import device_encoding
 from fpdf import FPDF
@@ -54,3 +55,6 @@ class Viewer():
         pdf.output('{}/{}.pdf'.format(path, filename))
 
         return '{}/{}.pdf'.format(path, filename)
+
+    def delete_file(self, path: str, filename: str, extension: str):
+        remove('{}/{}.{}'.format(path, filename, extension))

@@ -52,3 +52,5 @@ class Command():
 
         update.message.reply_document(document=open(
             'tmp/{}.pdf'.format(filename), 'rb'), filename='horarios_do_onibus.pdf')
+
+        viewer.delete_file(path='tmp', filename=filename, extension='pdf')
